@@ -21,7 +21,7 @@ public class Main {
                     c.setTaxCode(sc.nextLine());
                     System.out.print("Doanh thu tháng: ");
                     c.setMonthlyRevenue(Double.parseDouble(sc.nextLine()));
-                    System.out.println("✅ Đã lưu thông tin công ty.");
+                    System.out.println("Đã lưu thông tin công ty.");
                 }
                 case 2 -> {
                     System.out.print("Mã NV cần phân bổ: ");
@@ -49,7 +49,7 @@ public class Main {
                                 double pct = Double.parseDouble(sc.nextLine());
                                 yield new Director(id,name,phone,days,pct);
                             }
-                            default -> { System.out.println("⚠️ Loại không hợp lệ."); yield null; }
+                            default -> { System.out.println("Loại không hợp lệ."); yield null; }
                         };
                         if (e != null) c.addEmployee(e);
                     } else {
@@ -67,7 +67,7 @@ public class Main {
                 case 10-> c.findTopDirector();
                 case 11-> c.printDirectorsIncome();
                 case 0 -> running = false;
-                default-> System.out.println("⚠️ Lựa chọn không hợp lệ!");
+                default-> System.out.println("Lựa chọn không hợp lệ!");
             }
         }
         sc.close();

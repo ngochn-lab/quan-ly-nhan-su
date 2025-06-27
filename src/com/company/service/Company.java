@@ -17,7 +17,7 @@ public class Company {
     // 3a. Thêm nhân sự
     public void addEmployee(Employee e) {
         employees.add(e);
-        System.out.println("✅ Đã thêm: " + e.getId() + " - " + e.getName());
+        System.out.println("Đã thêm: " + e.getId() + " - " + e.getName());
     }
 
     // 2. Phân bổ NV vào TP
@@ -25,7 +25,7 @@ public class Company {
         Employee emp = findById(empId);
         Employee mgr = findById(mgrId);
         if (emp == null || !(mgr instanceof Manager)) {
-            System.out.println("⚠️ Sai mã NV hoặc không phải Trưởng phòng.");
+            System.out.println("Sai mã NV hoặc không phải Trưởng phòng.");
             return;
         }
         // Gỡ khỏi TP cũ (nếu có)
@@ -35,7 +35,7 @@ public class Company {
                 .forEach(m -> m.removeSubordinate(emp));
 
         ((Manager)mgr).addSubordinate(emp);
-        System.out.println("✅ Gán " + empId + " cho Trưởng phòng " + mgrId);
+        System.out.println("Gán " + empId + " cho Trưởng phòng " + mgrId);
     }
 
     // 3b. Xóa nhân sự
@@ -89,10 +89,10 @@ public class Company {
                 .max(Comparator.comparingDouble(Employee::calculateSalary))
                 .ifPresentOrElse(
                         e-> {
-                            System.out.println("🔥 NV Thường lương cao nhất:");
+                            System.out.println("NV Thường lương cao nhất:");
                             printSingleEmployee(e);
                         },
-                        ()-> System.out.println("⚠️ Không có NV Thường.")
+                        ()-> System.out.println("Không có NV Thường.")
                 );
     }
 
@@ -104,23 +104,23 @@ public class Company {
                 .max(Comparator.comparingInt(Manager::getSubCount))
                 .ifPresentOrElse(
                         m-> {
-                            System.out.println("🔥 TP nhiều NV dưới quyền nhất:");
+                            System.out.println("TP nhiều NV dưới quyền nhất:");
                             printSingleEmployee(m);
                         },
-                        ()-> System.out.println("⚠️ Không có TP.")
+                        ()-> System.out.println("Không có Trưởng Phòng.")
                 );
     }
 
     // 8. Sắp xếp theo ABC tên
     public void sortByName() {
         employees.sort(Comparator.comparing(Employee::getName, String.CASE_INSENSITIVE_ORDER));
-        System.out.println("🔤 Đã sắp xếp theo tên (ABC).");
+        System.out.println("Đã sắp xếp theo tên (ABC).");
     }
 
     // 9. Sắp xếp theo lương giảm dần
     public void sortBySalaryDesc() {
         employees.sort(Comparator.comparingDouble(Employee::calculateSalary).reversed());
-        System.out.println("💵 Đã sắp lương giảm dần.");
+        System.out.println("Sắp xếp theo lương giảm dần.");
     }
 
     // 10. GD nhiều cổ phần nhất
@@ -131,10 +131,10 @@ public class Company {
                 .max(Comparator.comparingDouble(Director::getSharePercent))
                 .ifPresentOrElse(
                         d-> {
-                            System.out.println("🔥 Giám đốc nhiều cổ phần nhất:");
+                            System.out.println("Giám đốc nhiều cổ phần nhất:");
                             printSingleEmployee(d);
                         },
-                        ()-> System.out.println("⚠️ Không có Giám đốc.")
+                        ()-> System.out.println("Không có Giám đốc.")
                 );
     }
 
