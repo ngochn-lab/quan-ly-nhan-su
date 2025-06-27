@@ -42,7 +42,7 @@ public class Company {
     public void removeEmployeeById(String id) {
         Employee e = findById(id);
         if (e == null) {
-            System.out.println("⚠️ Không tìm thấy NV " + id);
+            System.out.println("Không tìm thấy NV " + id);
             return;
         }
         // Nếu xóa TP, ngắt liên kết subordinates
@@ -50,7 +50,7 @@ public class Company {
             ((Manager)e).clearSubordinates();
         }
         employees.remove(e);
-        System.out.println("🗑 Đã xóa NV " + id);
+        System.out.println("Đã xóa NV " + id);
     }
 
     // hỗ trợ tìm NV
@@ -63,7 +63,7 @@ public class Company {
     // 4. Xuất thông tin toàn bộ
     public void printAllEmployees() {
         if (employees.isEmpty()) {
-            System.out.println("📭 Chưa có nhân sự nào.");
+            System.out.println("Chưa có nhân sự nào.");
             return;
         }
         System.out.println("\n--- DANH SÁCH NHÂN SỰ ---");
