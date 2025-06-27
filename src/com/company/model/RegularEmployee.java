@@ -1,4 +1,4 @@
-package model;
+package com.company.model;
 
 public class RegularEmployee extends Employee {
     private Manager manager = null;

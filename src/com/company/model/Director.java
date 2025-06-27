@@ -1,4 +1,4 @@
-package model;
+package com.company.model;
 
 public class Director extends Employee {
     private double sharePercent;

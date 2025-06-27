@@ -1,9 +1,7 @@
-package model;
+package com.company.model;
 
-abstract class Employee {
-    protected String id;
-    protected String name;
-    protected String phone;
+public abstract class Employee {
+    protected String id, name, phone;
     protected int workDays;
     protected double dailyWage;
 
@@ -15,10 +13,18 @@ abstract class Employee {
         this.dailyWage = dailyWage;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     /*
      * Lương cơ bản: lương 1 ngày * số ngày làm việc
      */
-    protected double baseSalary(){
+    protected double baseSalary() {
         return workDays * dailyWage;
     }
 
@@ -26,4 +32,9 @@ abstract class Employee {
      * Tính lương tháng: mỗi subclass override cách tính riêng của loại nhân viên
      */
     public abstract double calculateSalary();
+
+    public void printInfo() {
+        System.out.printf("%-5s | %-15s | %-10s | %2d days | %.0f/day | Salary: %.2f\n",
+                id, name, phone, workDays, dailyWage, calculateSalary());
+    }
 }
