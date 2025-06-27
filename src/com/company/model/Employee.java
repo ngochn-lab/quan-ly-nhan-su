@@ -2,39 +2,29 @@ package com.company.model;
 
 public abstract class Employee {
     protected String id, name, phone;
-    protected int workDays;
-    protected double dailyWage;
+    protected int daysWorked;
+    protected double salaryPerDay;
 
-    public Employee(String id, String name, String phone, int workDays, double dailyWage) {
+    public Employee(String id, String name, String phone, int daysWorked, double salaryPerDay) {
         this.id = id;
         this.name = name;
         this.phone = phone;
-        this.workDays = workDays;
-        this.dailyWage = dailyWage;
+        this.daysWorked = daysWorked;
+        this.salaryPerDay = salaryPerDay;
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId()            { return id; }
+    public String getName()          { return name; }
+    public String getPhone()         { return phone; }
+    public int    getDaysWorked()    { return daysWorked; }
+    public double getSalaryPerDay()  { return salaryPerDay; }
 
-    public String getName() {
-        return name;
-    }
-
-    /*
-     * Lương cơ bản: lương 1 ngày * số ngày làm việc
-     */
-    protected double baseSalary() {
-        return workDays * dailyWage;
-    }
-
-    /*
-     * Tính lương tháng: mỗi subclass override cách tính riêng của loại nhân viên
-     */
+    /** Công thức lương theo từng loại */
     public abstract double calculateSalary();
 
-    public void printInfo() {
-        System.out.printf("%-5s | %-15s | %-10s | %2d days | %.0f/day | Salary: %.2f\n",
-                id, name, phone, workDays, dailyWage, calculateSalary());
+    /** In 1 dòng với STT chạy từ Main */
+    public void printInfo(int stt) {
+        System.out.printf("%-3d | %-5s | %-15s | %-12s | %4d | %10.0f | %12.2f\n",
+                stt, id, name, phone, daysWorked, salaryPerDay, calculateSalary());
     }
 }

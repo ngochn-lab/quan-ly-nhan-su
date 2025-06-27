@@ -1,19 +1,19 @@
 package com.company.model;
 
 public class Director extends Employee {
-    private double sharePercent;
+    private double sharePercent;  // 0–100%
 
-    public Director(String id, String name, String phone, int workDays, double dailyWage) {
-        super(id, name, phone, workDays, dailyWage);
+    public Director(String id, String name, String phone, int daysWorked, double sharePercent) {
+        super(id, name, phone, daysWorked, 300);
+        this.sharePercent = Math.min(sharePercent, 100);
     }
 
-    @Override
-    protected double baseSalary() {
-        return dailyWage;
+    public double getSharePercent() {
+        return sharePercent;
     }
 
     @Override
     public double calculateSalary() {
-        return baseSalary();
+        return salaryPerDay * daysWorked;
     }
 }
