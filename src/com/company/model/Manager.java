@@ -12,15 +12,19 @@ public class Manager extends Employee {
     public void addSubordinate(Employee e) {
         if (!subordinates.contains(e)) subordinates.add(e);
     }
+
     public void removeSubordinate(Employee e) {
         subordinates.remove(e);
     }
+
     public void clearSubordinates() {
         subordinates.clear();
     }
+
     public List<Employee> getSubordinates() {
         return new ArrayList<>(subordinates);
     }
+
     public int getSubCount() {
         return subordinates.size();
     }
