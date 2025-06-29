@@ -32,11 +32,11 @@ public class Main {
                     c.assignToManager(eid, mid);
                 }
                 case 3 -> {
-                    System.out.print("1-Thêm  2-Xóa nhân sự: ");
+                    System.out.print("1 - Thêm | 2 - Xóa nhân sự: ");
                     int op = Integer.parseInt(sc.nextLine());
                     if (op == 1) {
                         // thêm
-                        System.out.print("Loại (1-NV Thường,2-TP,3-GĐ): ");
+                        System.out.print("Loại NV (1 - NV Thường, 2 - Trưởng Phòng, 3 - Giám Đốc): ");
                         int type = Integer.parseInt(sc.nextLine());
                         System.out.print("Mã NV: ");
                         String id = sc.nextLine();
@@ -96,7 +96,7 @@ public class Main {
                 "5 - Tính tổng lương công ty\n" +
                 "6 - NV thường có lương cao nhất\n" +
                 "7 - TP có nhiều NV dưới quyền nhất\n" +
-                "8 - Sắp xếp theo tên (ABC)\n" +
+                "8 - Sắp xếp tên theo bảng chữ cái (A-Z)\n" +
                 "9 - Sắp xếp theo lương giảm dần\n" +
                 "10 - Tìm Giám Đốc nhiều cổ phần nhất\n" +
                 "11 - Xuất thu nhập của từng Giám Đốc\n" +

@@ -93,7 +93,7 @@ public class Company {
         System.out.println("\n======== DANH SÁCH NHÂN SỰ ========");
         System.out.printf("%-3s | %-5s | %-15s | %-12s | %4s | %10s | %12s\n",
                 "STT", "Mã NV", "Họ Tên", "SĐT", "Ngày", "L/ngày", "Tổng lương");
-        System.out.println("--------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------");
         for (int i = 0; i < employees.size(); i++) {
             employees.get(i).printInfo(i + 1);
         }
